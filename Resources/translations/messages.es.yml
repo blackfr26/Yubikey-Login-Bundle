@@ -1,0 +1,6 @@
+login:
+    title: "%system_name%"
+    input:
+        placeholder: Presione su Yubikey
+    submit:
+        text: Ingresar

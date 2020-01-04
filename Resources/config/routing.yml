@@ -1,0 +1,6 @@
+desarrollo_hosting_yubikey_login_login:
+    path: /login
+    defaults:  { _controller: DesarrolloHostingYubikeyLoginBundle:Security:login }
+ 
+desarrollo_hosting_yubikey_login_logout:
+    path: /logout

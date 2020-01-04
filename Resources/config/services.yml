@@ -1,0 +1,20 @@
+services:
+    yubikey_authenticator:
+        class: DesarrolloHosting\YubikeyLoginBundle\Security\YubikeyAuthenticator
+        arguments:
+            - "%yubikey_login.yubikey.api_key%"
+            - "%yubikey_login.yubikey.client_id%"
+            
+    yubikey_roles_processor:
+        class: RolesProcessor
+        factory: [DesarrolloHosting\YubikeyLoginBundle\Security\RolesProcessor\RolesProcessorFactory, createRolesProcessor]
+        arguments:
+            - "%yubikey_login.roles_processor.name%"
+            - "%yubikey_login.roles_processor.params%"
+            
+    yubikey_user_provider:
+            class: DesarrolloHosting\YubikeyLoginBundle\Security\User\YubikeyUserProvider
+            arguments:
+                - "%yubikey_login.system_name%"
+                - "@yubikey_roles_processor"
+                - "%yubikey_login.base_role%"

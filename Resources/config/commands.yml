@@ -1,0 +1,14 @@
+services:
+    yubikey_roles_command:
+        class: DesarrolloHosting\YubikeyLoginBundle\Command\YubikeyRolesCommand
+        arguments:
+            - "@=service(parameter('yubikey_login.user_provider'))"
+        tags:
+            - { name: console.command }
+    
+    yubikey_user_command:
+        class: DesarrolloHosting\YubikeyLoginBundle\Command\YubikeyUserCommand
+        arguments:
+            - "@=service(parameter('yubikey_login.user_provider'))"
+        tags:
+            - { name: console.command }

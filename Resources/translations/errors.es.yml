@@ -1,0 +1,9 @@
+yubikey_validate_error:
+    invalid_otp_length: La longitud del OTP es inválida
+    replayed_otp: El OTP ya ha sido utilizado
+    ok: Login exitoso
+system_not_found: No existe el sistema %system_name%
+user_not_found: No existe el usuario con Yubikey %yubikey%
+user_not_allowed: "%user_name% no está autorizado para entrar a este sistema"
+role_processor_error: "Ha ocurrido un error al procesar los roles: %error_message%"
+generic_error: "Error inesperado: %error_message%"

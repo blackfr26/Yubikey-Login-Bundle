@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="googlebot" content="noindex,nofollow" />
+        <title>{{ 'login.title'|trans({'%system_name%': system_name})|raw }}</title>
+        <link rel="stylesheet" href="{{ asset(assets.css) }}" />
+        <script src="{{ asset(assets.js) }}"></script>
+    </head>
+    
+    <body {{ background_color ? "style='background-color: #{background_color}'"|raw }}>
+        <div id="container">
+            <div id="inputblock">
+                <div id="leftinputblock">
+                    <img src="{{ asset(assets.logo) }}" alt="Logo" />
+                </div>
+                <div id="rightinputblock">
+                    <div id="title">{{ 'login.title'|trans({'%system_name%': system_name})|raw }}</div>
+                    <form method="POST">
+                        <input type="password" name="yubikey_otp" autofocus autocomplete="off" placeholder="{{ 'login.input.placeholder'|trans }}">
+                    </form>
+                    {% if error %}
+                    <div id="messages">{{ error.messageKey|trans(error.messageData, 'errors') }}</div>
+                    {% endif %}
+                    <div id="spinner_container" class="hidden">
+                        <div class="spinner">
+                            {% for i in 1..10 %}
+                                <div class="rect{{ i }}"></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </div>
+    </body>
+</html>
