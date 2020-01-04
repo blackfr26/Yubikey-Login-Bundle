@@ -1,4 +1,4 @@
-[18:24, 4/1/2020] Felipe: <?php
+<?php
 namespace DesarrolloHosting\YubikeyLoginBundle\Libraries\ModHex;
  
 /*
